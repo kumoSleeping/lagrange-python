@@ -113,7 +113,8 @@ class HttpCat:
                     else:
                         break
                 else:
-                    raise ConnectionResetError("Connection reset by peer")
+                    # raise ConnectionResetError("Connection reset by peer")
+                    pass
             return bytes(bs)
         elif "Content-Length" in header:
             return await reader.readexactly(int(header["Content-Length"]))
